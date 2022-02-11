@@ -1,6 +1,39 @@
-.container {
-    border: 1px solid;
-    width: 500px;
-    
+h1 {
+    text-align: center;
+}
 
+body {
+    background-color: #FBF8F1;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+    padding-left: 0;
+}
+
+.container {
+    border: 2px solid black;
+    border-radius: 2rem;
+    width: 500px;
+    margin: 3rem auto;
+    background-color: #F7ECDE;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    width: 90%;
+    height: 2rem;
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+}
+
+button {
+    display: block;
+    margin: 1rem auto;
+    background-color: #E9DAC1;
 }
