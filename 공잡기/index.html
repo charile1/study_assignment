@@ -4,9 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <link rel="stylesheet" href="main.css">
+    <title>공 잡기 게임</title>
 </head>
 <body>
+    <canvas id="myCanvas" width="480px" height="320px"></canvas>
+    
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d"); //2D rendering context 도구 
+
+        // 직사각형 그리기
+        // beginPath와 clostPath안에 모든 명령어가 들어간다.
+        // ctx.beginPath();
+        // ctx.rect(20, 40, 50, 50); // 직사각형 정의
+        // ctx.fillStyle = '#ff0000'; // fill에서 칠해질 색상 값
+        // ctx.fill();
+        // ctx.closePath();
+
+        // // 원 그리기 
+        // ctx.beginPath();
+        // ctx.arc(240, 160, 20, 0, Math.PI*2, false); 
+        // ctx.fillStyle = 'green'; 
+        // ctx.fill();
+        // ctx.closePath();
+
+        // // 외곽선에 색상 부여
+        // ctx.beginPath();
+        // ctx.rect(160, 10, 100, 40); 
+        // ctx.strokeStyle = 'rgba(0, 0, 255, 0.5); 
+        // ctx.stroke();
+        // ctx.closePath();
+
+        // 움직이는 공 정의하기 
+        let x = canvas.width/2;
+        let y = canvas.height-30;
+        let dx = 1;
+        let dy = -1;
+
+        // 공 만들기 
+        function drawBall() {
+            ctx.beginPath();
+            ctx.arc(x, y, ballRadius, 0, Math.PI*2); 
+            ctx.fillStyle = 'pink'; 
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        // 움직이게 만들기 
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // 그 전 캔버스를 지워주는 메서드
+            drawBall();
+            x += dx;
+            y += dy;
+
+            if(y + dy > canvas.height || y + dy < 0) {
+            dy = - dy;
+        }
+
+            if(x + dx > canvas.width || x + dx < 0) {
+                dx = - dx;
+            }
+        }
+        setInterval (draw, 10);
+
+        // 반지름 정의하기
+        const ballRadius = 10;
+
+
+
+    </script>
     
 </body>
-</html>
+</html> 
