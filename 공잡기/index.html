@@ -58,11 +58,12 @@
             x += dx;
             y += dy;
 
-            if(y + dy > canvas.height || y + dy < 0) {
+            // 충돌 감지를 공의 원점이 아닌 원의 둘레를 기준으로 계산해야한다.
+            if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
             dy = - dy;
         }
 
-            if(x + dx > canvas.width || x + dx < 0) {
+            if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
                 dx = - dx;
             }
         }
