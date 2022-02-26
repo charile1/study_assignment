@@ -32,7 +32,7 @@ button {
     background: rgba(143,188,143);
     box-shadow: 0 8px 32px 0 rgba(143,188,143 );
     backdrop-filter: blur( 13.5px );
-    -webkit-backdrop-filter: blur( 13.5px );
+
 }
 
 .modal-overlay .tit {

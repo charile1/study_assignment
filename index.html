@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        const time = new Date();
+        console.log(time);
+
+        let year = time.getTime();
+        console.log(year);
+
+        year = Math.floor(year/(3600*24*365*1000))+1970
+
+        console.log(year);
+    </script>
+</body>
+</html>
